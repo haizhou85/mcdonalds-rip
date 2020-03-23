@@ -1,20 +1,19 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Card, CardTitle, CardText, Button } from "reactstrap";
 
-class Menu extends Component{
-  addItem = () => {
-    this.props.addMenuPrice(this.props.itemCost, this.props.itemEmoji)
+const Menu = (props) => {
+  const addItem = () => {
+    props.addMenuPrice(props.itemCost, props.itemEmoji)
   }
-  render(){
     return(
       <>
         <Card body>
-          <CardTitle>Menu Item: { this.props.menuItem }</CardTitle>
-          <CardText>Menu Price: ${ this.props.itemCost }</CardText>
-          <Button onClick={ this.addItem }>Add { this.props.menuItem }</Button>
+          <CardTitle>Menu Item: { props.menuItem }</CardTitle>
+          <CardText>Menu Price: ${ props.itemCost }</CardText>
+          <Button onClick={ addItem }>Add { props.menuItem }</Button>
         </Card>
       </>
     )
   }
-}
+
 export default Menu;
